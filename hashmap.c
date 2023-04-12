@@ -120,21 +120,11 @@ void eraseMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
   long index = map->current;
-  long primerIndex = index;
-
-  while(1){
-    Pair *current = map->buckets[index];
+  Pair *current = map->buckets[index];
     
-    if(current == NULL) return NULL;
+  if(current == NULL) return NULL;
     
-    return current;
-    
-    index = (index + 1) % map->capacity;
-    
-    if(index == primerIndex) return NULL;
-  }
-
-  return NULL;
+  return current;
 }
 
 Pair * nextMap(HashMap * map) {

@@ -159,3 +159,29 @@ Wed 12 Apr 2023 10:58:26 PM UTC:
  tests:  5|4
 total_score: 30/70
 77008e2
+Wed 12 Apr 2023 10:59:14 PM UTC: 
+ hashmap.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:83:25: error: ‘return’ with no value, in function returning non-void [-Werror=return-type]
+   83 |     if(current == NULL) return;
+      |                         ^~~~~~
+hashmap.c:76:8: note: declared here
+   76 | Pair * searchMap(HashMap * map,  char * key) {
+      |        ^~~~~~~~~
+hashmap.c:87:7: error: ‘return’ with no value, in function returning non-void [-Werror=return-type]
+   87 |       return;
+      |       ^~~~~~
+hashmap.c:76:8: note: declared here
+   76 | Pair * searchMap(HashMap * map,  char * key) {
+      |        ^~~~~~~~~
+hashmap.c:92:30: error: ‘return’ with no value, in function returning non-void [-Werror=return-type]
+   92 |     if(index == primerIndex) return;
+      |                              ^~~~~~
+hashmap.c:76:8: note: declared here
+   76 | Pair * searchMap(HashMap * map,  char * key) {
+      |        ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+fa8bcc9

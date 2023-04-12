@@ -74,13 +74,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
-
-
-    return NULL;
-}
-
-void eraseMap(HashMap * map,  char * key) {
-  long index = hash(key,map->capacity);
+    long index = hash(key,map->capacity);
   long primerIndex = index;
 
   while(1){
@@ -97,6 +91,12 @@ void eraseMap(HashMap * map,  char * key) {
     
     if(index == primerIndex) return;
   }
+
+    return NULL;
+}
+
+void eraseMap(HashMap * map,  char * key) {
+  
 }
 
 Pair * firstMap(HashMap * map) {

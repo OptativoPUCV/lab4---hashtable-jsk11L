@@ -60,7 +60,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 
     Pair *current = map->buckets[index];
 
-    if(current == NULL){
+    if(current == NULL || current->key == NULL){
       Pair * nuevoPar = (Pair *)malloc(sizeof(Pair));
       strcpy(nuevoPar->key,key);
       nuevoPar->value = value;
@@ -69,7 +69,6 @@ void insertMap(HashMap * map, char * key, void * value) {
       map->current = index;
       return;
     }
-
 
     index = (index+1) % map->capacity;
 

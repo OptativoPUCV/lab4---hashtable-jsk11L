@@ -92,11 +92,29 @@ Pair * searchMap(HashMap * map,  char * key) {
     if(index == primerIndex) return NULL;
   }
 
-    return NULL;
+  return NULL;
 }
 
 void eraseMap(HashMap * map,  char * key) {
-  
+  long index = hash(key,map->capacity);
+  long primerIndex = index;
+
+  while(1){
+    Pair *current = map->buckets[index];
+    
+    if(current == NULL) return NULL;
+    
+    if(strcmp(current->key,key) == 0){
+      current->key = NULL;
+      return;
+    }
+    
+    index = (index + 1) % map->capacity;
+    
+    if(index == primerIndex) return;
+  }
+
+  return;
 }
 
 Pair * firstMap(HashMap * map) {

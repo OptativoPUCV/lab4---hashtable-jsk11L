@@ -127,10 +127,7 @@ Pair * firstMap(HashMap * map) {
     
     if(current == NULL) return NULL;
     
-    if(strcmp(current->key,key) == 0){
-      map->current = index;
-      return current;
-    }
+    return current;
     
     index = (index + 1) % map->capacity;
     

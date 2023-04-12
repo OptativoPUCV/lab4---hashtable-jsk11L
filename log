@@ -217,3 +217,15 @@ Wed 12 Apr 2023 11:02:02 PM UTC:
  tests:  11|2
 total_score: 50/70
 18d1cf4
+Wed 12 Apr 2023 11:05:47 PM UTC: 
+ hashmap.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:130:28: error: ‘key’ undeclared (first use in this function); did you mean ‘key_t’?
+  130 |     if(strcmp(current->key,key) == 0){
+      |                            ^~~
+      |                            key_t
+hashmap.c:130:28: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+c279663

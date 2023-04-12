@@ -119,8 +119,25 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
+  long index = map->current;
+  long primerIndex = index;
 
-    return NULL;
+  while(1){
+    Pair *current = map->buckets[index];
+    
+    if(current == NULL) return NULL;
+    
+    if(strcmp(current->key,key) == 0){
+      map->current = index;
+      return current;
+    }
+    
+    index = (index + 1) % map->capacity;
+    
+    if(index == primerIndex) return NULL;
+  }
+
+  return NULL;
 }
 
 Pair * nextMap(HashMap * map) {

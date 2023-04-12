@@ -38,11 +38,6 @@ int is_equal(void* key1, void* key2){
     return 0;
 }
 
-void enlarge(HashMap * map) {
-    enlarge_called = 1; //no borrar (testing purposes)
-}
-
-
 HashMap * createMap(long capacity) {
   HashMap *map = (HashMap *)malloc(sizeof(HashMap));
   map->size = 0;
@@ -76,19 +71,32 @@ void insertMap(HashMap * map, char * key, void * value) {
       return;
     }
   }
-
-
-}
-
-void eraseMap(HashMap * map,  char * key) {    
-
-
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
 
 
     return NULL;
+}
+
+void eraseMap(HashMap * map,  char * key) {
+  long index = hash(key,map->capacity);
+  long primerIndex = index;
+
+  while(1){
+    Pair *current = map->buckets[index];
+    
+    if(current == NULL) return NULL;
+    
+    if(strcmp(current->key,key) == 0){
+      map->current = index;
+      return;
+    }
+    
+    index = (index + 1) % map->capacity;
+    
+    if(index == primerIndex) return;
+  }
 }
 
 Pair * firstMap(HashMap * map) {
@@ -99,4 +107,8 @@ Pair * firstMap(HashMap * map) {
 Pair * nextMap(HashMap * map) {
 
     return NULL;
+}
+
+void enlarge(HashMap * map) {
+    enlarge_called = 1; //no borrar (testing purposes)
 }

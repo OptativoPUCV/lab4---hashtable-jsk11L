@@ -140,15 +140,16 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
   
-  long index = map->current+1;
+  long index = map->capacity+1;
   long primerIndex = index;
   Pair *current = map->buckets[index];
 
   while(1){
     current = map->buckets[index];
-
-    if(current == NULL && current->key == NULL) return NULL;
-    else break;
+    
+    if(current != NULL && current->key != NULL){
+      break;
+    }
     
     index = (index+1) % map->capacity; 
     if(index == primerIndex) return NULL;

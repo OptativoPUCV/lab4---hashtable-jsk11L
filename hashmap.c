@@ -152,7 +152,7 @@ Pair * nextMap(HashMap * map) {
     }
     
     index = (index+1) % map->capacity;
-    if(index == primerIndex) return NULL;
+    if(index == primerIndex || index == map->capacity) return NULL;
   }
   
   map->current = index;

@@ -49,10 +49,10 @@ HashMap * createMap(long capacity) {
     map->capacity = capacity;
     map->current = -1;
   
-    map->buckets = (Pair **)malloc(capacity * sizeof(Pair *));
-    for (long i = 0; i < capacity; i++) {
+    map->buckets = (Pair **)calloc(capacity,sizeof(Pair *));
+    /*for (long i = 0; i < capacity; i++) {
         map->buckets[i] = NULL;
-    }
+    }*/
 
     return map;
 }

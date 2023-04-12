@@ -371,3 +371,17 @@ Wed 12 Apr 2023 11:27:52 PM UTC:
  tests:  16|1
 total_score: 60/70
 04eb0e9
+Wed 12 Apr 2023 11:54:29 PM UTC: 
+ hashmap.c | 2 ++
+ 1 file changed, 2 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:164:5: error: expected ‘,’ or ‘;’ before ‘enlarge_called’
+  164 |     enlarge_called = 1; //no borrar (testing purposes)
+      |     ^~~~~~~~~~~~~~
+hashmap.c:162:12: error: unused variable ‘old_buckets’ [-Werror=unused-variable]
+  162 |     Pair** old_buckets = map->buckets
+      |            ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+0a2918f

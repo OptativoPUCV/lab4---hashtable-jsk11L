@@ -159,5 +159,7 @@ Pair * nextMap(HashMap * map) {
 }
 
 void enlarge(HashMap * map) {
+    Pair** old_buckets = map->buckets
+    
     enlarge_called = 1; //no borrar (testing purposes)
 }

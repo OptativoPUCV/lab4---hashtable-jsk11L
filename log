@@ -40,3 +40,38 @@ Wed 12 Apr 2023 10:41:56 PM UTC:
  tests:  1|5
 total_score: 10/70
 3866e9c
+Wed 12 Apr 2023 10:49:26 PM UTC: 
+ hashmap.c | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:56:16: error: too few arguments to function ‘hash’
+   56 |   long index = hash(key) % map->capacity;
+      |                ^~~~
+hashmap.c:26:6: note: declared here
+   26 | long hash( char * key, long capacity) {
+      |      ^~~~
+hashmap.c:65:32: error: expected ‘;’ before ‘newPair’
+   65 |       strcpy(nuevoPar->key,key)
+      |                                ^
+      |                                ;
+   66 |       newPair->value = value;
+      |       ~~~~~~~                   
+hashmap.c:67:29: error: ‘newPair’ undeclared (first use in this function); did you mean ‘Pair’?
+   67 |       map->buckets[index] = newPair;
+      |                             ^~~~~~~
+      |                             Pair
+hashmap.c:67:29: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:74:38: error: expected ‘;’ before ‘if’
+   74 |     index = (index+1) % map->capacity
+      |                                      ^
+      |                                      ;
+   75 | 
+   76 |     if(index == primerIndex){
+      |     ~~                                
+hashmap.c:57:8: error: unused variable ‘primerIndex’ [-Werror=unused-variable]
+   57 |   long primerIndex = index;
+      |        ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+ff1dc35

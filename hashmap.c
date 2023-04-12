@@ -49,11 +49,34 @@ HashMap * createMap(long capacity) {
   map->capacity = capacity;
   map->current = -1;
   map->buckets = (Pair **)calloc(capacity,sizeof(Pair *));
-
-    return map;
+  return map;
 }
 
 void insertMap(HashMap * map, char * key, void * value) {
+  long index = hash(key) % map->capacity;
+  long primerIndex = index;
+
+  while(1){
+
+    Pair *current = map->buckets[index];
+
+    if(current == NULL){
+      Pair * nuevoPar = (Pair *)malloc(sizeof(Pair));
+      strcpy(nuevoPar->key,key)
+      newPair->value = value;
+      map->buckets[index] = newPair;
+      map->size++;
+      map->current = index;
+      return;
+    }
+
+
+    index = (index+1) % map->capacity
+
+    if(index == primerIndex){
+      return;
+    }
+  }
 
 
 }

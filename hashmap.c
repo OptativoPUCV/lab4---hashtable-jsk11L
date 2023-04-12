@@ -71,7 +71,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     }
 
 
-    index = (index+1) % map->capacity
+    index = (index+1) % map->capacity;
 
     if(index == primerIndex){
       return;

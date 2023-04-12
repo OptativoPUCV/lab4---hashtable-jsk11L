@@ -123,3 +123,8 @@ hashmap.c:57:8: error: unused variable ‘primerIndex’ [-Werror=unused-variabl
 cc1: all warnings being treated as errors
 Compilation failed
 5dbcd07
+Wed 12 Apr 2023 10:50:20 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+d2111e6

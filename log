@@ -105,3 +105,21 @@ hashmap.c:57:8: error: unused variable ‘primerIndex’ [-Werror=unused-variabl
 cc1: all warnings being treated as errors
 Compilation failed
 4d737ee
+Wed 12 Apr 2023 10:50:05 PM UTC: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:74:38: error: expected ‘;’ before ‘if’
+   74 |     index = (index+1) % map->capacity
+      |                                      ^
+      |                                      ;
+   75 | 
+   76 |     if(index == primerIndex){
+      |     ~~                                
+hashmap.c:57:8: error: unused variable ‘primerIndex’ [-Werror=unused-variable]
+   57 |   long primerIndex = index;
+      |        ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+5dbcd07

@@ -53,7 +53,7 @@ HashMap * createMap(long capacity) {
 }
 
 void insertMap(HashMap * map, char * key, void * value) {
-  long index = hash(key) % map->capacity;
+  long index = hash(key,map->capacity);
   long primerIndex = index;
 
   while(1){
@@ -62,7 +62,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 
     if(current == NULL){
       Pair * nuevoPar = (Pair *)malloc(sizeof(Pair));
-      strcpy(nuevoPar->key,key)
+      strcpy(nuevoPar->key,key);
       nuevoPar->value = value;
       map->buckets[index] = nuevoPar;
       map->size++;

@@ -247,3 +247,14 @@ Wed 12 Apr 2023 11:08:56 PM UTC:
  tests:  12|2
 total_score: 50/70
 4b3e804
+Wed 12 Apr 2023 11:16:22 PM UTC: 
+ hashmap.c | 14 +++++++++++---
+ 1 file changed, 11 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:123:8: error: unused variable ‘primerIndex’ [-Werror=unused-variable]
+  123 |   long primerIndex = index;
+      |        ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+b7eb2fd

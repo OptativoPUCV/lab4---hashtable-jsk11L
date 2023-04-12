@@ -146,10 +146,9 @@ Pair * nextMap(HashMap * map) {
 
   while(1){
     current = map->buckets[index];
-    
-    if(current != NULL && current->key != NULL){
-      break;
-    }
+
+    if(current == NULL && current->key == NULL) return NULL;
+    else break;
     
     index = (index+1) % map->capacity; 
     if(index == primerIndex) return NULL;

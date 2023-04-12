@@ -291,3 +291,14 @@ Wed 12 Apr 2023 11:19:20 PM UTC:
  tests:  12|2
 total_score: 50/70
 06f3494
+Wed 12 Apr 2023 11:21:10 PM UTC: 
+ hashmap.c | 22 +++++++++++++++++++---
+ 1 file changed, 19 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:133:17: error: ‘primerIndex’ undeclared (first use in this function)
+  133 |     if(index == primerIndex) return NULL;
+      |                 ^~~~~~~~~~~
+hashmap.c:133:17: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+c55b386

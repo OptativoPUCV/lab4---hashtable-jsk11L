@@ -129,8 +129,8 @@ Pair * firstMap(HashMap * map) {
       break;
     }
     
-    index++;
-    if(index == map->capacity) return NULL;
+    index = (index+1) % map->capacity; 
+    if(index == primerIndex) return NULL;
   }
   
   map->current = index;
@@ -138,8 +138,24 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
+  
+  long index = map->capacity+1;
+  long primerIndex = index;
+  Pair *current = map->buckets[index];
 
-    return NULL;
+  while(1){
+    current = map->buckets[index];
+    
+    if(current != NULL){
+      break;
+    }
+    
+    index = (index+1) % map->capacity; 
+    if(index == primerIndex) return NULL;
+  }
+  
+  map->current = index;
+  return current;
 }
 
 void enlarge(HashMap * map) {

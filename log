@@ -302,3 +302,9 @@ hashmap.c:133:17: error: ‘primerIndex’ undeclared (first use in this functio
 hashmap.c:133:17: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 c55b386
+Wed 12 Apr 2023 11:21:22 PM UTC: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+ tests:  12|2
+total_score: 50/70
+24f1b17

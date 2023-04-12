@@ -120,6 +120,7 @@ void eraseMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
   long index = 0;
+  long primerIndex = index;
   Pair *current = map->buckets[index];
 
   while(1){

@@ -151,8 +151,8 @@ Pair * nextMap(HashMap * map) {
       break;
     }
     
-    index = (index+1) % map->capacity; 
     if(index == primerIndex) return NULL;
+    index = (index+1) % map->capacity;
   }
   
   map->current = index;

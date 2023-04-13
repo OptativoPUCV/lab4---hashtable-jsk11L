@@ -165,20 +165,13 @@ void enlarge(HashMap * map) {
     map->buckets = (Pair**) malloc(sizeof(Pair*));
     map->size = 0;
 
-    long index = 0;
-    Pair* current = old_buckets[index];
-
-    while(1){
-      current = old_buckets[index];
-
-      if(current != NULL && current->key != NULL){
+    for (long i = 0; i < old_capacity; i++) {
+    Pair *current = old_buckets[i];
+    if (current != NULL && current->key != NULL) {
         insertMap(map, current->key, current->value);
-      }
-
-      
-      index++;
-      if(index == (map->capacity / 2) ) break;
+        free(current->key);
+        free(current);
     }
-  
+}
     enlarge_called = 1; //no borrar (testing purposes)
 }

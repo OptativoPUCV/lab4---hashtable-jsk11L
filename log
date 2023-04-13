@@ -459,3 +459,14 @@ Thu 13 Apr 2023 12:07:15 AM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 8370396
+Thu 13 Apr 2023 12:09:58 AM UTC: 
+ hashmap.c | 15 ++++-----------
+ 1 file changed, 4 insertions(+), 11 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:168:26: error: ‘old_capacity’ undeclared (first use in this function)
+  168 |     for (long i = 0; i < old_capacity; i++) {
+      |                          ^~~~~~~~~~~~
+hashmap.c:168:26: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+b52d52e

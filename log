@@ -475,3 +475,17 @@ Thu 13 Apr 2023 12:10:17 AM UTC:
  1 file changed, 1 insertion(+)
  tests:  0|0
 5def3b9
+Thu 13 Apr 2023 12:10:38 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:166:29: error: too few arguments to function ‘calloc’
+  166 |     map->buckets = (Pair**) calloc(sizeof(Pair*));
+      |                             ^~~~~~
+In file included from test.c:2:
+/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/stdlib.h:543:14: note: declared here
+  543 | extern void *calloc (size_t __nmemb, size_t __size)
+      |              ^~~~~~
+Compilation failed
+704300f

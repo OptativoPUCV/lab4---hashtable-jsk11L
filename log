@@ -385,3 +385,32 @@ hashmap.c:162:12: error: unused variable ‘old_buckets’ [-Werror=unused-varia
 cc1: all warnings being treated as errors
 Compilation failed
 0a2918f
+Thu 13 Apr 2023 12:06:46 AM UTC: 
+ hashmap.c | 21 ++++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:168:11: error: lvalue required as left operand of assignment
+  168 |     index = 0;
+      |           ^
+hashmap.c:169:32: error: array subscript is not an integer
+  169 |     Pair* current = old_buckets[index];
+      |                                ^
+hashmap.c:172:28: error: array subscript is not an integer
+  172 |       current = old_buckets[index];
+      |                            ^
+hashmap.c:174:18: error: suggest parentheses around comparison in operand of ‘&’ [-Werror=parentheses]
+  174 |       if(current != NULL & current->key != NULL){
+      |                  ^
+hashmap.c:179:12: error: lvalue required as increment operand
+  179 |       index++;
+      |            ^~
+hashmap.c:180:16: error: comparison between pointer and integer [-Werror]
+  180 |       if(index == (map->capacity / 2) ) break;
+      |                ^~
+hashmap.c:162:12: error: variable ‘old_buckets’ set but not used [-Werror=unused-but-set-variable]
+  162 |     Pair** old_buckets = map->buckets;
+      |            ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+cdcf596

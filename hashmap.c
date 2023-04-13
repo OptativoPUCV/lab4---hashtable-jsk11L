@@ -171,7 +171,7 @@ void enlarge(HashMap * map) {
     while(1){
       current = old_buckets[index];
 
-      if(current != NULL & current->key != NULL){
+      if(current != NULL && current->key != NULL){
         insertMap(map, current->key, current->value);
       }
 

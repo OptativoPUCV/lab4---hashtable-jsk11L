@@ -176,7 +176,7 @@ void enlarge(HashMap * map) {
       }
 
       
-      index++;
+      index+= 1;
       if(index == (map->capacity / 2) ) break;
     }
   

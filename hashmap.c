@@ -165,7 +165,7 @@ void enlarge(HashMap * map) {
     map->buckets = (Pair**) malloc(sizeof(Pair*));
     map->size = 0;
 
-    index = 0;
+    long index = 0;
     Pair* current = old_buckets[index];
 
     while(1){
@@ -176,7 +176,7 @@ void enlarge(HashMap * map) {
       }
 
       
-      index+= 1;
+      index++;
       if(index == (map->capacity / 2) ) break;
     }
   

@@ -443,3 +443,14 @@ hashmap.c:162:12: error: variable ‘old_buckets’ set but not used [-Werror=un
 cc1: all warnings being treated as errors
 Compilation failed
 600ef61
+Thu 13 Apr 2023 12:07:06 AM UTC: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:174:18: error: suggest parentheses around comparison in operand of ‘&’ [-Werror=parentheses]
+  174 |       if(current != NULL & current->key != NULL){
+      |                  ^
+cc1: all warnings being treated as errors
+Compilation failed
+200d7c7
